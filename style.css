@@ -16,9 +16,14 @@ body{
   margin:0;
   font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
   color:var(--ink);
-  background:linear-gradient(135deg,#fff7fc 0%,#ffe3f3 45%,#efe2ff 100%);
-}
 
+  background:linear-gradient(
+      135deg,
+      #ffd9ee 0%,
+      #ff75bc 50%,
+      #d8b7ff 100%
+  );
+}
 a{
   color:inherit;
   text-decoration:none;
@@ -37,7 +42,7 @@ a{
   position:absolute;
   border-radius:50%;
   filter:blur(8px);
-  opacity:.55;
+  opacity:.85;
 }
 
 .hero:before{
