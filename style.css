@@ -35,30 +35,29 @@ a{
   position:relative;
   overflow:hidden;
 }
-
 .hero:before,
 .hero:after{
-  content:"";
-  position:absolute;
-  border-radius:50%;
-  filter:blur(8px);
-  opacity:.85;
+content:"";
+position:absolute;
+border-radius:50%;
+filter:blur(30px);
+opacity:1;
 }
 
 .hero:before{
-  width:360px;
-  height:360px;
-  background:var(--mint);
-  right:-90px;
-  top:90px;
+width:550px;
+height:550px;
+background:#9cf3df;
+right:-120px;
+top:40px;
 }
 
 .hero:after{
-  width:420px;
-  height:420px;
-  background:var(--pink);
-  left:-120px;
-  bottom:-120px;
+width:650px;
+height:650px;
+background:#ff4ca8;
+left:-180px;
+bottom:-180px;
 }
 
 .nav{
