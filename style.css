@@ -20,7 +20,7 @@ body{
   background:linear-gradient(
       135deg,
       #ffd9ee 0%,
-      #ff75bc 50%,
+      #ff75bc 45%,
       #d8b7ff 100%
   );
 }
@@ -40,8 +40,8 @@ a{
 content:"";
 position:absolute;
 border-radius:50%;
-filter:blur(30px);
-opacity:1;
+filter:blur(45px);
+opacity:.55;
 }
 
 .hero:before{
@@ -53,8 +53,8 @@ top:40px;
 }
 
 .hero:after{
-width:650px;
-height:650px;
+width:520px;
+height:520px;
 background:#ff4ca8;
 left:-180px;
 bottom:-180px;
