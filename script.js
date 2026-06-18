@@ -1,7 +1,13 @@
 const SUPABASE_URL = "https://ubdkxgwsiogypgciyovp.supabase.co";
 const SUPABASE_KEY = "sb_publishable_aEenmxbE5meJQZ2vunYvyw_HlcT_9gA";
 
+const EMAILJS_PUBLIC_KEY = "bL3T113OtDtDDrDCy";
+const EMAILJS_SERVICE_ID = "service_4el2ws8";
+const EMAILJS_TEMPLATE_ID = "template_xim0haq";
+
 const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+emailjs.init(EMAILJS_PUBLIC_KEY);
 
 const servicios = {
   esmaltado: { nombre: "💅 Esmaltado", duracion: 2 },
@@ -140,13 +146,28 @@ form.addEventListener("submit", async e => {
     hora: horaSeleccionada
   });
 
-  if(error){
-    console.error(error);
-    mensaje.textContent = "❌ No se pudo guardar la reserva.";
-    return;
-  }
+if(error){
+  console.error(error);
+  mensaje.textContent = "❌ No se pudo guardar la reserva.";
+  return;
+}
 
-  mensaje.textContent = "✅ Reserva realizada con éxito. Te esperamos 💅✨";
-  form.reset();
-  await cargarHoras();
+await emailjs.send(
+  EMAILJS_SERVICE_ID,
+  EMAILJS_TEMPLATE_ID,
+  {
+    nombre: nombre,
+    correo: correo,
+    telefono: telefono,
+    servicio: servicios[servicio.value].nombre,
+    fecha: fecha.value,
+    hora: horaSeleccionada
+  }
+);
+
+mensaje.textContent = "✅ Reserva realizada con éxito. Te esperamos 💅✨";
+
+form.reset();
+
+await cargarHoras();
 });
