@@ -197,6 +197,43 @@
     <img src="assets/logo.png" alt="Logo Jocelyn Nails">
     <p>Jocelyn Nails © 2026 · Nail Art | Nivelación | Esmaltado Permanente</p>
   </footer>
+  <section class="section agenda" id="agenda">
+  <p class="eyebrow">Agenda online</p>
+  <h2>Reserva tu hora 💅📅</h2>
+
+  <form id="agenda-form" class="agenda-card">
+    <label>Servicio</label>
+    <select id="agenda-servicio" required>
+      <option value="">Elige un servicio</option>
+      <option value="esmaltado">💅 Esmaltado — 2 horas</option>
+      <option value="retiro">💅 Esmaltado + retiro — 2 horas</option>
+      <option value="polygel">✨ Extensiones PolyGel — 3 horas</option>
+    </select>
+
+    <label>Fecha</label>
+    <input type="date" id="agenda-fecha" required>
+
+    <label>Horas disponibles</label>
+    <div id="agenda-horas" class="agenda-horas">
+      <p>🌸 Primero elige servicio y fecha.</p>
+    </div>
+
+    <label>Nombre</label>
+    <input type="text" id="agenda-nombre" placeholder="Tu nombre" required>
+
+    <label>Teléfono</label>
+    <input type="tel" id="agenda-telefono" placeholder="+56 9..." required>
+
+    <button class="btn primary" type="submit">Confirmar reserva ✨</button>
+
+    <p class="special-time">
+      🌙 ¿Necesitas un horario especial muy temprano o muy tarde?
+      Escríbenos por WhatsApp y revisamos disponibilidad 💌
+    </p>
+
+    <p id="agenda-mensaje"></p>
+  </form>
+</section>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
   <script src="script.js"></script>
